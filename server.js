@@ -13,10 +13,7 @@ connectDB().catch((e)=>{
 app.use(cors());
 
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
+
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
@@ -24,7 +21,10 @@ app.use(express.urlencoded({
 
 app.use('/', routes);
 app.use(express.static(process.cwd() + "/public"));
-
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 var appPort = process.env.PORT || 3000;
 
 
