@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 var appPort = process.env.PORT || 3000;
-
 export  function getBooks(searchText)
 {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q="+searchText+"&key=AIzaSyBymRwgPrhIEygU7jCgkl1imHCjMwlO1gA&maxResults=18");
+    return axios.get("https://www.googleapis.com/books/v1/volumes?q="+searchText+"&maxResults=20&key="+process.env.API_KEY);
 }
 export async function saveBook(book)
 {
