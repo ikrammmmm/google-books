@@ -3,6 +3,9 @@ import {saveBook,deleteBook} from "../helpers/api_helper"
 
 
 export default class Bookcard extends Component {
+    componentDidMount() {
+        document.title = 'Google Book Search';
+      }
     Addtofav = async (book) =>
     {
      

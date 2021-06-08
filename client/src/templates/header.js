@@ -2,7 +2,9 @@ import React,{Component}  from 'react';
 
 
 export default class Header extends Component {
-  
+  componentDidMount() {
+    document.title = 'Google Book Search';
+  }
     render()
     {
         return (
