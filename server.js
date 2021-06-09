@@ -2,7 +2,7 @@ const  connectDB =  require('./config/database.js')
 var routes = require('./controllers/api_controller.js');
 const cors = require('cors');
 const path = require("path");
-
+console.log("testtt",process.env.CONNECTION_URI)
 
 var express = require('express');
 var app  =  express()
