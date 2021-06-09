@@ -8,14 +8,14 @@ export  function getBooks(searchText)
 }
 export async function saveBook(book)
 {
-    const data  = await axios.post(`http://localhost:3000/api/books`,  book);
+    const data  = await axios.post(`/api/books`,  book);
     return data;
 }
 export async function getSavedBooks()
 {
-    return await axios.get(`http://localhost:3000/api/books`);
+    return await axios.get(`/api/books`);
 }
 export async function deleteBook(id)
 {
-    return axios.post(`http://localhost:3000/api/books/`+id);
+    return axios.post(`/api/books/`+id);
 }
